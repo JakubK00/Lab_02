@@ -3,10 +3,10 @@ class ObjectFactory:
         self.builders = {}
 
     def register_builder(self, key, builder):
-        self._builder[key] = builder
+        self._builders[key] = builder
 
     def create(self, key, **kwargs):
-        builder = self._builder.get(key)
+        builder = self._builders.get(key)
         if not builder:
             raise ValueError(key)
         return builder(**kwargs)
