@@ -1,6 +1,6 @@
 class ObjectFactory:
     def __init__(self):
-        self.builders = {}
+        self._builders = {}
 
     def register_builder(self, key, builder):
         self._builders[key] = builder

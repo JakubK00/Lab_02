@@ -8,7 +8,7 @@ from datatype.enums import DartMultiplier
 
 
 def run():
-    channel = grpc.insecure_channel('127.0.0.1:50055')
+    channel = grpc.insecure_channel('127.0.0.1:50055', options=(('grpc.enable_http_proxy', 0),))
     stub = darts_match_pb2_grpc.DartsMatchStub(channel)
 
     # Let's create 2 501 darts matches
